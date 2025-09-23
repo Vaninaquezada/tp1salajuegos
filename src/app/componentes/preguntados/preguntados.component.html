@@ -1,0 +1,82 @@
+<div class="juegoContainer">
+  <div class="juego">
+    <div class="game">
+      <div class="overlay-text {{ start }}" (click)="clickBoton()">
+        Click para empezar
+      </div>
+      <div
+        id="victory-text"
+        class="overlay-text {{ victoria }}"
+        (click)="clickBoton()"
+      >
+        {{ resultadoText }} tenes {{ preguntas_correctas }} respuestas correctas
+        <span class="overlay-text-small"
+          ><br />
+          <br />
+          <br />
+          <br />Click para jugar de nuevo</span
+        >
+      </div>
+      <div
+        id="victory-text"
+        class="overlay-text {{ perdiste }}"
+        (click)="clickBoton()"
+      >
+        {{ resultadoText }} tenes {{ erradas }} erroneas
+        <span class="overlay-text-small"><br />Click para jugar de nuevo</span>
+      </div>
+      <div class="bodyJuego">
+        <div class="puntaje" id="puntaje">
+          Puntaje: {{ preguntas_correctas }} <br />
+          Preguntas erroneas: {{ erradas }}
+        </div>
+        <div class="encabezado">
+          <div class="categoria" id="categoria">Categoria: {{ categoria }}</div>
+          <div class="numero" id="numero"></div>
+          <div class="pregunta" id="pregunta">
+            {{ preguntaActual }}
+          </div>
+          <img
+            src="{{ imagen }}"
+            [ngStyle]="estiloImagen"
+            class="imagen"
+            id="imagen"
+          />
+        </div>
+        <div
+          class="btn"
+          id="btn1"
+          [ngStyle]="{ 'background-color': this.estilos[0] }"
+          (click)="oprimir_btn(0)"
+        >
+          {{ respuesta1 }}
+        </div>
+        <div
+          class="btn"
+          id="btn2"
+          [ngStyle]="{ 'background-color': this.estilos[1] }"
+          (click)="oprimir_btn(1)"
+        >
+          {{ respuesta2 }}
+        </div>
+        <div
+          class="btn"
+          id="btn3"
+          (click)="oprimir_btn(2)"
+          [ngStyle]="{ 'background-color': this.estilos[2] }"
+        >
+          {{ respuesta3 }}
+        </div>
+        <div
+          class="btn"
+          id="btn4"
+          [ngStyle]="{ 'background-color': this.estilos[3] }"
+          (click)="oprimir_btn(3)"
+        >
+          {{ respuesta4 }}
+        </div>
+        <button class="fill" (click)="reiniciar()">{{ opcion }}</button>
+      </div>
+    </div>
+  </div>
+</div>

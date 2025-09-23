@@ -1,0 +1,138 @@
+* {
+    transition: all 0.3s;
+}
+img{
+    height: '300px';
+    width: '100%'
+}
+.bodyJuego {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: calibri;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.encabezado {
+    position: relative;
+    background: rgb(255, 255, 255);
+    min-width: 300px;
+    width: 70%;
+    max-width: 600px;
+    padding: 10px;
+}
+
+.categoria {
+    opacity: 0.3;
+    text-align: left;
+    color: rgb(14, 123, 173);
+}
+
+.pregunta {
+    padding: 10px;
+    color: rgb(14, 123, 173);
+}
+
+.imagen {
+    object-fit: cover;
+    height: 0px;
+    width: 0px;
+}
+
+.btn {
+    background: white;
+    width: 60%;
+    max-width: 550px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.numero {
+    position: absolute;
+    opacity: 0.3;
+    top: 10px;
+    right: 10px;
+}
+
+.puntaje {
+    padding: 10px;
+    color: rgb(14, 123, 173);
+    font-size: large;
+}
+
+.overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #c1ff83;
+    font-family: Creepy, serif;
+    transition: background-color 500ms, font-size 500ms;
+}
+
+.overlay-text-small {
+    font-size: 0.3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 6em;
+    }
+}
+
+/* Fill button styling */
+.fill {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 20px;
+}
+
+.fill::after {
+    content: "";
+    background-color: #4cffff;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.fill:hover::after {
+    top: 0px;
+    left: 0px;
+}
+/* End of Fill Button  */

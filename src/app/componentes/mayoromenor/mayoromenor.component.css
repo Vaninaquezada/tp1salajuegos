@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+.bodyJuego {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: calibri;
+    font-size: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Creepy, serif;
+}
+
+.puntaje {
+    padding: 10px;
+    color: rgb(9, 215, 205);
+    font-size: 50px;
+}
+
+.overlay-text {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #c1ff83;
+    font-family: Creepy, serif;
+    transition: background-color 500ms, font-size 500ms;
+}
+.h2l {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #c1ff83;
+    font-family: Creepy, serif;
+    transition: background-color 500ms, font-size 500ms;
+}
+.overlay-text-small {
+    font-size: 0.3em;
+}
+
+.overlay-text.visible {
+    display: flex;
+    animation: overlay-grow 500ms forwards;
+}
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.8);
+        font-size: 6em;
+    }
+}
+
+/* Fill button styling */
+.fill {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 20px;
+}
+
+.fill::after {
+    content: "";
+    background-color: #4cffff;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+    font-size: 10em;
+}
+
+.fill:hover::after {
+    top: 0px;
+    left: 0px;
+}
+/* End of Fill Button  */
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 15px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(40deg, #faf894 0%, #fa99fc 45%, #9dfffd 100%);
+    border-radius: 15px;
+}
+
+.cards {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin: 0 auto;
+}
+.face {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faceh2 {
+    margin: 0;
+    padding: 0;
+    font-size: 10em;
+    color: #fff;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.o {
+    margin: 50px;
+}
+
+.botones {
+    display: grid;
+}
+.pan {
+    font-size: 4em;
+    color: #fff;
+}

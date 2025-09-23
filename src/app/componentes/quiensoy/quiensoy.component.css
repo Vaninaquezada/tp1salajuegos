@@ -1,0 +1,94 @@
+.imagenDeQuienSoy {
+    width: 400px;
+    height: 250px;
+}
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #5a8eff;
+}
+.img-circle{
+    border-radius: 50%;
+    border-width: 20px;
+    border-style: double;
+    border-color:#f8f7b2; 
+}
+p {
+    font-size: 16px;
+}
+.margin {
+    margin-bottom: 45px;
+}
+.bg-1 {
+    background-color: #1abc9c;
+    color: #5a8eff;
+}
+.bg-2 {
+    background-color: #474e5d; 
+    color: #5a8eff;
+}
+.bg-3 {
+    background-color: #5a8eff;
+    color: #555555;
+}
+.bg-4 {
+    background-color: #3a0447; /* Black Gray */
+    color: #5a8eff;
+    height: 20%;
+}
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav li a:hover {
+    color: #1abc9c !important;
+}
+
+nav {
+    display: flex;
+    background-color: rgb(14, 58, 255);
+    color: #5a8eff;
+}
+
+ul li {
+    padding: 10px;
+}
+.active {
+    background-color: rgb(243, 243, 243);
+    border: solid;
+    border-radius: 25px;
+    border-color: rgb(50, 138, 253);
+    color: #5a8eff;
+}
+a {
+    color: #5a8eff;
+}
+.row {
+    background-color: #1f293a;
+    padding: 30px;
+    color: #5a8eff;
+
+}
+
+#que {
+    margin-top: 60px;
+    border-width: 20px;
+    border-style:double;
+    border-color:#f8f7b2; 
+}
+.juego {
+    height: 250px;
+}
+.flecha {
+    height: 80px;
+    margin: 15px;
+}

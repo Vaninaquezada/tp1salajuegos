@@ -1,0 +1,16 @@
+<div class="body">
+  <div class="background-one">
+    <div class="link-container">
+      <a class="link-one" routerLink="/listados">Listado Resultados</a>
+    </div>
+  </div>
+  <div class="background-two link-container">
+    <a class="link-two" routerLink="/juegos">Juegos</a>
+  </div>
+  <div class="background-three link-container">
+    <a class="link-three" routerLink="/encuesta">Encuesta</a>
+  </div>
+  <div class="chat">
+    <app-chat *ngIf="user$ | async; user"></app-chat>
+  </div>
+</div>

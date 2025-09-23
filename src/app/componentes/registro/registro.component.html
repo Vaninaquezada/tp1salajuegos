@@ -1,0 +1,84 @@
+<div class="body">
+  <div class="container">
+    <div class="login-box">
+      <h2>Registro</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <p>{{ message }}</p>
+        <div class="input-box">
+          <input type="email" formControlName="email" required />
+          <label for="email">Email</label>
+          <p
+            class="error ion-padding"
+            *ngIf="registerForm.get('email')!.errors?.['required'] && registerForm.get('email')!.touched"
+          >
+            El email es requerido
+          </p>
+          <p
+            class="error ion-padding"
+            *ngIf="registerForm.get('email')!.errors?.['email'] "
+          >
+            No cumple el formato de email.
+          </p>
+        </div>
+        <div class="input-box">
+          <input type="password" formControlName="password" required />
+          <label>Contraseña</label>
+          <p
+            class="error ion-padding"
+            *ngIf="registerForm.get('password')!.errors?.['required'] && registerForm.get('password')!.touched"
+          >
+            La contraseña es requerida.
+          </p>
+          <p
+            class="error ion-padding"
+            *ngIf="
+            registerForm.get('password')!.errors?.['minlength'] &&
+            registerForm.get('password')!.touched
+          "
+          >
+            La contraseña tiene que tener minimo 6 caracteres
+          </p>
+        </div>
+
+        <div class="input-box">
+          <input
+            type="password"
+            formControlName="passwordR"
+            ngModel
+            minlength="6"
+          />
+          <label for="passwordR">Repetir Contraseña</label>
+          <p
+            class="error ion-padding"
+            *ngIf="registerForm.get('passwordR')!.errors?.['required'] && registerForm.get('passwordR')!.touched"
+          >
+            Repetir la contraseña es requerido.
+          </p>
+          <p
+            class="error ion-padding"
+            *ngIf="
+                  registerForm.get('passwordR')!.errors?.['minlength'] &&
+                  registerForm.get('passwordR')!.touched
+                "
+          >
+            La contraseña tiene que tener minimo 6 caracteres
+          </p>
+          <p
+            class="error"
+            *ngIf="
+                  registerForm.get('passwordR')!.errors?.['confirmedValidator']
+                "
+          >
+            La contraseña y la confirmacion de la contraseña deben ser iguales
+          </p>
+        </div>
+
+        <button type="submit" class="btn">Registrar</button>
+
+        <div class="signup-link">
+          <a routerLink="/login"> ¿Ya tienes una cuenta?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

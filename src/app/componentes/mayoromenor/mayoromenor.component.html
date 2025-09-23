@@ -1,0 +1,54 @@
+<div class="juegoContainer">
+  <div class="juego">
+    <div class="game">
+      <div class="overlay-text {{ start }}" (click)="clickBoton()">
+        Click para empezar
+      </div>
+      <div
+        id="victory-text"
+        class="overlay-text {{ victoria }}"
+        (click)="clickBoton()"
+      >
+        {{ resultadoText }} !! <br />
+        Tenes {{ correctas }} respuestas correctas <br />
+        y {{ incorrectas }}
+        incorrectas
+        <span class="overlay-text-small"><br />Click para jugar de nuevo</span>
+      </div>
+
+      <div class="bodyJuego" *ngIf="jugando">
+        <div class="puntaje" id="puntaje">
+          Puntaje: {{ correctas }} <br />
+          Preguntas erroneas: {{ incorrectas }}
+          <br />
+
+          <div class="puntaje">{{ mensaje }} <br /></div>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="face face2">
+              <h2 class="faceh2">{{ numeroActual }}</h2>
+            </div>
+          </div>
+          <div class="botones">
+            <button class="fill" (click)="verificar('mayor')">
+              <span class="pan">Mayor</span>
+            </button>
+
+            <button class="fill" (click)="verificar('menor')">
+              <span class="pan">Menor</span>
+            </button>
+          </div>
+          <!--
+                        <div class="card">
+                            <div class="face face2">
+                                <h2 class="faceh2">{{numeroNuevo}}</h2>
+                            </div>
+                        </div>
+                        -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

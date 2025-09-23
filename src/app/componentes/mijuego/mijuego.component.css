@@ -1,0 +1,130 @@
+.juegoContainer {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.juego {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.game {
+  /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-image: linear-gradient(#d6e7b3, #a1e7e7);
+  border-radius: 5px;
+}
+
+.grid {
+  display: grid;
+  /* grid-template-columns: 80px 80px 80px 80px;
+  //  grid-template-rows: 80px 80px 80px 80px;
+  */
+  grid-template-columns: 106px 106px 106px;
+  grid-template-rows: 106px 106px 106px;
+  border: 1px solid #550000;
+}
+
+.grid button {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background-color: #f5f4c0;
+  color: #003333;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #550000;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer button {
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  width: 100px;
+  background-color: #d4ee9f;
+  color: #003333;
+  outline: none;
+  cursor: pointer;
+}
+.ordenar {
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  width: 150px;
+  background-color: #d4ee9f;
+  color: #003333;
+  outline: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.footer button:hover,
+.ordenar:hover {
+  color: #d4ee9f;
+  background-color: #003333;
+}
+
+.footer span {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  color: #14a890;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.message {
+  color: #aa3939;
+  height: 80px;
+}
+
+.overlay-text {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fdbf8c;
+  font-family: Creepy, serif;
+  font-size: 4em;
+  transition: background-color 500ms, font-size 500ms;
+}
+.overlay-text.visible {
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+}
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 6em;
+  }
+}

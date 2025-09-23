@@ -1,0 +1,19 @@
+<div class="body">
+  <nav *ngIf="user$ | async as user; else login">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/juegos">Juegos</a>
+    <a routerLink="/quiensoy">Quien Soy</a>
+    <a (click)="logOut()">Logout</a>
+    <a>{{ usuario.email }}</a>
+    <div class="animation start-home"></div>
+  </nav>
+
+  <ng-template #login>
+    <nav>
+      <a routerLink="/home">Home</a>
+      <a routerLink="/login">Login</a>
+      <a routerLink="/registro">Registro</a>
+      <div class="animation start-home"></div>
+    </nav>
+  </ng-template>
+</div>
