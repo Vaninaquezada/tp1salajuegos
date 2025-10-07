@@ -20,7 +20,9 @@
             ><br />
             <span>{{ message.msg }} </span>
             <span class="time"
-              ><br />{{ message.createdAt?.toMillis() | date : "short" }}</span
+              ><br />{{
+                message.createdAt?.toMillis() | date : "dd/MM/yy"
+              }}</span
             >
           </div>
         </div>

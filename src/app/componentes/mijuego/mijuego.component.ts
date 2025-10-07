@@ -5,6 +5,7 @@ import { Caja } from '../../clases/miJuego/caja';
 import { Estado } from '../../clases/miJuego/estado';
 import { Lista } from '../../clases/lista';
 import { CommonModule } from '@angular/common';
+import { ListadoService } from '../../services/listado.service';
 //import { ListadoService } from '../../services/listado.service';
 @Component({
   selector: 'app-mijuego',
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './mijuego.component.css',
 })
 export class MijuegoComponent {
-  //listado = inject(ListadoService);
+  listado = inject(ListadoService);
   resultado!: Lista;
   estado!: Estado;
   tickId!: any;
@@ -116,7 +117,7 @@ export class MijuegoComponent {
         correctas: 'N/A',
         juego: 'Rompecabezas',
       };
-      //  this.listado.addResultado(this.resultado);
+      this.listado.addResultado(this.resultado);
     }
   }
 

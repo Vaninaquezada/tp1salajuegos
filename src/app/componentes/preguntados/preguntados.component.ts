@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ImagenService } from '../../services/imagen.service';
 import { CommonModule } from '@angular/common';
+import { ListadoService } from '../../services/listado.service';
 @Component({
   selector: 'app-preguntados',
   imports: [CommonModule],
@@ -9,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './preguntados.component.css',
 })
 export class PreguntadosComponent {
+  listado = inject(ListadoService);
   imagen: string;
   cantPreguntas: number;
   estiloImagen: {};
@@ -201,6 +203,7 @@ export class PreguntadosComponent {
       correctas: this.preguntas_correctas,
       juego: 'Preguntados',
     };
+    this.listado.addResultado(this.resultado);
   }
   clickBoton() {
     this.cantPreguntas = 0;

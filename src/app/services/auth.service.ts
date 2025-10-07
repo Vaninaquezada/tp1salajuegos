@@ -13,6 +13,7 @@ import {
   Firestore,
   setDoc,
   serverTimestamp,
+  addDoc,
 } from '@angular/fire/firestore';
 import { filter, first, map, switchMap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
@@ -82,8 +83,10 @@ export class AuthService {
 
   async updateLogUser(email: string) {
     const user = this.auth.currentUser;
+    const userlogCol = collection(this.firestore, 'userlog');
     try {
-      await setDoc(doc(this.firestore, 'userlog'), {
+      console.log('usuario logueado', user);
+      await addDoc(userlogCol, {
         email: email,
         fechaIngreso: serverTimestamp(),
       });

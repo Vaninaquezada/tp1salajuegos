@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,900&display=swap");
+@import url("http://fonts.cdnfonts.com/css/pastel-colors");
+
+.container {
+  color: rgb(13, 96, 107);
+  font-family: "Grandstander", cursive;
+}
+.mail {
+  color: magenta;
+}
+
+.invalid {
+  color: red;
+  font-size: large;
+}
+
+.sexo {
+  margin: 20px;
+}
+main {
+  background-color: rgb(189, 243, 225);
+}
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: rgb(13, 96, 107);
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 20px;
+  font-family: "Pastel Colors", sans-serif;
+}
+
+.fill::after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}
+/* End of Fill Button  */

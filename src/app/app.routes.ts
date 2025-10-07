@@ -5,6 +5,8 @@ import { JuegosComponent } from './componentes/juegos/juegos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { QuiensoyComponent } from './componentes/quiensoy/quiensoy.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ListadosComponent } from './componentes/listados/listados.component';
+import { EncuestaComponent } from './componentes/encuesta/encuesta.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -33,6 +35,14 @@ export const routes: Routes = [
       import('./componentes/mayoromenor/mayoromenor.component').then(
         (x) => x.MayoromenorComponent
       ),
+  },
+  {
+    path: 'listados',
+    component: ListadosComponent,
+  },
+  {
+    path: 'encuesta',
+    component: EncuestaComponent,
   },
   { path: 'mijuego', component: MijuegoComponent },
   { path: '**', component: HomeComponent },

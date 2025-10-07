@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Words } from '../../clases/words';
 import { CommonModule } from '@angular/common';
+import { ListadoService } from '../../services/listado.service';
 @Component({
   selector: 'app-ahorcado',
   imports: [CommonModule],
@@ -8,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './ahorcado.component.css',
 })
 export class AhorcadoComponent {
+  listado = inject(ListadoService);
   ALPHABET = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
   MAX_ATTEMPTS = 6;
   MASK_CHAR = '_';
@@ -64,6 +66,7 @@ export class AhorcadoComponent {
         correctas: 'N/A',
         errores: (this.MAX_ATTEMPTS - this.remainingAttempts).toString(),
       };
+      this.listado.addResultado(res);
     }
     if (this.playerLoses()) {
       this.mensaje = 'Perdiste. La palabra era ' + this.getUnhiddenWord();
@@ -76,6 +79,7 @@ export class AhorcadoComponent {
         juego: 'Ahorcado',
         errores: (this.MAX_ATTEMPTS - this.remainingAttempts).toString(),
       };
+      this.listado.addResultado(res);
     }
   }
 

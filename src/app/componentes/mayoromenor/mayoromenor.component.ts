@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ListadoService } from '../../services/listado.service';
 @Component({
   selector: 'app-mayoromenor',
   imports: [CommonModule],
@@ -7,6 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './mayoromenor.component.css',
 })
 export class MayoromenorComponent {
+  listado = inject(ListadoService);
   numero = 0;
   numeroNuevo: any = '?';
   numeroActual = 0;
@@ -99,7 +101,7 @@ export class MayoromenorComponent {
       correctas: this.correctas,
       juego: 'Mayor o Menor',
     };
-
+    this.listado.addResultado(this.resultado);
     this.numero = 0;
     this.numeroNuevo = 0;
     this.numeroActual = 0;

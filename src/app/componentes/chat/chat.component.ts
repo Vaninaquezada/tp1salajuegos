@@ -11,10 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './chat.component.css',
 })
 export class ChatComponent {
-  @ViewChild('.container') content: any;
   chatSer = inject(ChatService);
   router = inject(Router);
-
+  @ViewChild('.container') content: any;
   state: boolean;
   icons: any;
   args: any;
@@ -24,9 +23,6 @@ export class ChatComponent {
   newMsg = '';
   constructor() {
     this.state = false;
-  }
-
-  ngOnInit(): void {
     this.messages = this.chatSer.getChatMessages();
   }
 

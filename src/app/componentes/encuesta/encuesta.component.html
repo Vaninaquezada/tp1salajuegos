@@ -1,0 +1,296 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h1>Encuesta</h1>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col-md-7 col-lg-8">
+        <form
+          class="needs-validation"
+          [formGroup]="formGroup"
+          (ngSubmit)="enviar()"
+          novalidate
+        >
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nombre"
+                id="firstName"
+                placeholder=""
+                value=""
+                required
+              />
+              <div class="invalid-feedback">Ingrese un nombre valido.</div>
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('nombre')!.errors?.['required'] && formGroup.get('nombre')!.touched"
+                >El nombre es requerido</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('nombre')!.hasError('pattern')"
+                >El nombre solo puede estar compuesto por letras</small
+              >
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Apellido</label>
+              <input
+                type="text"
+                formControlName="apellido"
+                class="form-control"
+                id="lastName"
+                placeholder=""
+                value=""
+                required
+              />
+              <div class="invalid-feedback">Ingrese un apellido valido.</div>
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('apellido')!.errors?.['required'] && formGroup.get('apellido')!.touched"
+                >El apellido es requerido</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('apellido')!.hasError('pattern')"
+                >El apellido solo puede estar compuesto por letras</small
+              >
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label"
+                >Email <span class="text-muted"></span
+              ></label>
+              <input
+                type="email"
+                class="form-control mail"
+                id="email"
+                value="{{ mail }}"
+                formControlName="email"
+              />
+              <span
+                class="error ion-padding"
+                *ngIf="formGroup.get('email')!.errors?.['required'] && formGroup.get('email')!.touched"
+              >
+                El email es requerido
+              </span>
+              <span
+                class="error ion-padding"
+                *ngIf="formGroup.get('email')!.errors?.['email'] "
+              >
+                No cumple el formato de email.
+              </span>
+            </div>
+            <div class="col-6">
+              <label for="address" class="form-label">Edad</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="edad"
+                id="address"
+                placeholder=""
+                required
+              />
+              <div class="invalid-feedback">Ingrese edad.</div>
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('edad')!.errors?.['required'] && formGroup.get('edad')!.touched"
+                >La edad es requerida</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('edad')!.hasError('pattern')"
+                >La edad tiene que ser numerica</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('edad')!.hasError('min')"
+                >La edad no puede ser menor a 18</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('edad')!.hasError('max')"
+                >La edad no puede ser mayor a 99</small
+              >
+            </div>
+
+            <div class="col-6">
+              <label for="address2" class="form-label"
+                >Número de teléfono
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="telefono"
+                id="address2"
+                placeholder=""
+              />
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('telefono')!.errors?.['required'] && formGroup.get('telefono')!.touched"
+                >El numero de telefono es requerido</small
+              >
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('telefono')!.hasError('maxlength')"
+                >El numero de telefono no puede exceder los 10 caracteres
+              </small>
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('telefono')!.hasError('pattern')"
+                >El telefono tiene que ser numerico</small
+              >
+            </div>
+
+            <div class="col-md-5">
+              <label for="se" class="sexo">Sexo </label>
+              <select
+                class="form-select"
+                id="country"
+                formControlName="sexo"
+                required
+              >
+                <option value="">Seleccione...</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otro">Otro</option>
+                <option value="N/A">N/A</option>
+              </select>
+              <br />
+              <small
+                class="invalid"
+                *ngIf="formGroup.get('sexo')!.errors?.['required'] && formGroup.get('sexo')!.touched"
+                >No ha seleccionado sexo</small
+              >
+            </div>
+          </div>
+          <hr class="my-4" />
+          <h4 class="mb-3">¿Le gusto la pagina?</h4>
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="same-address"
+              formControlName="pregunta1"
+              value="Si"
+            />
+            <label class="form-check-label" for="same-address">Si</label>
+          </div>
+
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="save-info"
+              formControlName="pregunta1"
+              value="No"
+            />
+            <label class="form-check-label" for="save-info">No</label>
+          </div>
+          <small
+            class="invalid"
+            *ngIf="formGroup.get('pregunta1')!.errors?.['required'] && formGroup.get('pregunta2')!.touched"
+            >No ha contestado la pregunta</small
+          >
+          <hr class="my-4" />
+
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1"
+              >¿Que juegos que le gustaria ver en la pagina?</label
+            >
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              formControlName="pregunta2"
+              rows="3"
+              value=""
+            ></textarea>
+            <small
+              class="invalid"
+              *ngIf="formGroup.get('pregunta2')!.errors?.['required'] && formGroup.get('pregunta2')!.touched"
+              >No ha contestado la pregunta</small
+            >
+          </div>
+
+          <hr class="my-4" />
+
+          <h4 class="mb-3">¿Cual es su juego favorito?</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input
+                id="Memotest"
+                name="pregunta3"
+                type="radio"
+                class="form-check-input"
+                formControlName="pregunta3"
+                value="Memotest"
+                checked
+                required
+              />
+              <label class="form-check-label" for="Memotest">Preguntados</label>
+            </div>
+            <div class="form-check">
+              <input
+                id="TaTeTi"
+                name="pregunta3"
+                type="radio"
+                class="form-check-input"
+                formControlName="pregunta3"
+                value="TaTeTi"
+                required
+              />
+              <label class="form-check-label" for="TaTeTi">Ahorcado</label>
+            </div>
+            <div class="form-check">
+              <input
+                id="Piedra papel o Tijera"
+                name="pregunta3"
+                type="radio"
+                class="form-check-input"
+                formControlName="pregunta3"
+                value="Piedra papel o Tijera"
+                required
+              />
+              <label class="form-check-label" for="Piedra papel o Tijera"
+                >Mayor o menor</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                id="Rompecabezas de numeros"
+                name="pregunta3"
+                type="radio"
+                class="form-check-input"
+                formControlName="pregunta3"
+                value="mi juego"
+                required
+              />
+              <label class="form-check-label" for="Rompecabezas de numeros"
+                >mi juego</label
+              >
+            </div>
+
+            <small
+              class="invalid"
+              *ngIf="formGroup.get('pregunta3')!.errors?.['required'] && formGroup.get('pregunta3')?.touched"
+              >No ha contestado la pregunta</small
+            >
+          </div>
+
+          <button
+            class="fill w-100 btn btn-primary btn-lg"
+            type="submit"
+            [disabled]="!formGroup.valid"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
